@@ -23,7 +23,9 @@ const App = () => {
       (val === 3 && houseChoice === 1)
     ) {
       setText("You Win");
-      setScore((prev) => prev + 1);
+      setTimeout(() => {
+        setScore((prev) => prev + 1);
+      }, 1000)
     } else if (
       (houseChoice === 1 && val === 2) ||
       (houseChoice === 2 && val === 3) ||
