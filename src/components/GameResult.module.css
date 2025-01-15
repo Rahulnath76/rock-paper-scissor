@@ -1,10 +1,4 @@
-.game-result {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 4rem;
-  gap: 10rem;
-}
+
 
 .icon {
   position: relative;
@@ -46,17 +40,5 @@
   justify-content: center;
 }
 
-.box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-.box p {
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
 
 

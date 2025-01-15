@@ -24,18 +24,17 @@ const GameResult = ({ text, handlePlayAgain, chosen, housePick, playing }) => {
     }, 2000);
   }, [playing]);
 
+
   return (
-    <div className={`${styles[`game-result`]}`}>
-      <div className={`${styles.box}`}>
-        <p>You Picked</p>
+    <div className={`flex items-center justify-center pt-16 gap-24 transition-all duration-300 ease-out`}>
+      <div className={`flex items-center justify-center flex-col gap-12 `}>
+        <p className="uppercase font-semibold text-[0.9rem]">You Picked</p>
         <div className={`${styles["icon-paper"]}`}>
           <img src={playerImg} alt="" className={`${styles.icon}`} />
         </div>
       </div>
       {/* check this out */}
-        {
-          decideWinner && (
-          <div className={`flex flex-col gap-3 items-center ${decideWinner ? "opacity-100 visible" :   "opacity-0 invisible"} transition-all duration-500 ease-out`}>
+          <div className={`flex flex-col gap-3 items-center ${decideWinner ? "opacity-100 visible" :   "opacity-0 invisible max-h-0 max-w-0"} transition-all duration-300 ease-out`}>
           <p className="uppercase text-3xl font-bold">{text}</p>
           <button
             className="bg-white text-[#2a45c0] py-[5px] px-5 rounded-sm uppercase"
@@ -44,12 +43,15 @@ const GameResult = ({ text, handlePlayAgain, chosen, housePick, playing }) => {
             Play Again
           </button>
         </div>
-          )
-        }
 
-      <div className={`${styles.box}`}>
-        <p>The House picked</p>
-        <div className={`${styles["icon-rock"]} ${styles["winning-class"]}`}>
+      <div className={`flex items-center justify-center flex-col gap-12`}>
+        <p className="uppercase font-semibold text-[0.9rem]">The House picked</p>
+
+        <div className={`flex flex-col items-center h-24 w-24 bg-gray-400 rounded-full ${decideWinner ? "hidden" : "block"}`}>
+
+        </div>
+
+        <div className={`${styles["icon-rock"]} ${styles["winning-class"]} ${decideWinner ? "opacity-100 visible" : "opacity-0 invisible max-h-0 max-w-0"} transition-all duration-300 ease-out`}>
           <img src={houseImg} alt="" className={`${styles.icon}`} />
         </div>
       </div>
