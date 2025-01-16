@@ -9,6 +9,7 @@ const App = () => {
   const [text, setText] = useState("");
   const [chosen, setChosen] = useState(-111);
   const [housePick, setHousePick] = useState(-111);
+  const [winning, setWinning] = useState(null);
 
   // 1 - paper, 2 - rock, 3 - scissor
   const handleWin = (val) => {
@@ -25,6 +26,7 @@ const App = () => {
       setText("You Win");
       setTimeout(() => {
         setScore((prev) => prev + 1);
+        setWinning(1);
       }, 1000)
     } else if (
       (houseChoice === 1 && val === 2) ||
@@ -32,8 +34,10 @@ const App = () => {
       (houseChoice === 3 && val === 1)
     ) {
       setText("YOu lose");
+      setWinning(2);
     } else {
       setText("Draw");
+      setWinning(null);
     }
     setPlaying(false);
   };
@@ -79,6 +83,7 @@ const App = () => {
               chosen={chosen}
               housePick={housePick}
               playing={playing}
+              winning={winning}
             />
           </div>
         </div>

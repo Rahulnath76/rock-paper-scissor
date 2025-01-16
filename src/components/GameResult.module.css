@@ -1,5 +1,3 @@
-
-
 .icon {
   position: relative;
   background: #fff;
@@ -32,5 +30,9 @@
   justify-content: center;
 }
 
-
-
+.winning-class {
+  box-shadow: 0 0 0 4rem #3b436333,
+    0 0 0 7.5rem #3b436333,
+    0 0 0 10rem #3b436333;
+  border-radius: 100%;
+}
