@@ -43,23 +43,23 @@ const App = () => {
   };
 
   return (
-    <div className="bg">
+    <div className="bg overflow-hidden">
       <div className="game">
-        <div className="game-header">
-          <h2 className="primary-heading">
+        <div className="game-header sm:min-w-[560px] min-w-[300px]">
+          <h2 className="primary-heading md:text-2xl text-xl flex items-center justify-center">
             Rock
             <br />
             paper <br />
             scissor
           </h2>
 
-          <div className="score-box">
+          <div className="score-box md:py-1 md:px-5 px-3 py-1">
             <p>SCORE</p>
-            <span className="score">{score}</span>
+            <span className="score md:text-3xl mt-1 text-2xl">{score}</span>
           </div>
         </div>
 
-        <div className="relative">
+        <div className="relative md:mt-4">
           <div
             className={`absolute inset-0 flex items-center justify-center  transition-opacity duration-200 ${
               playing ? "opacity-100 z-10" : "opacity-0 -z-10"
